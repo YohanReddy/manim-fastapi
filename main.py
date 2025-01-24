@@ -9,6 +9,9 @@ from pydantic import BaseModel
 import ast
 import uuid  # Add this import at the top
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+app.mount("/public", StaticFiles(directory="public"), name="public")
+
 
 app.add_middleware(
     CORSMiddleware,
